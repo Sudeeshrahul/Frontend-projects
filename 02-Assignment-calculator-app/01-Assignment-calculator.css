@@ -1,0 +1,75 @@
+/* Global reset and font */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Header */
+header {
+    background: #e5e7c8;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+    font-size: 1.8rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Section */
+.input {
+    background: #797975;
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.input input {
+    padding: 12px;
+    width: 45%;
+    margin: 0 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Output Section */
+#output-div {
+    text-align: center;
+    background: beige;
+    padding: 15px;
+    border: 1px solid #ccc;
+    max-width: 500px;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+/* Operations Section */
+#operations {
+    background: #af9797;
+    margin: 20px auto;
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#operations > button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#operations > button:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
