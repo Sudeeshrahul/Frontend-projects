@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator-app</title>
+    <link rel="stylesheet" href="/01-calculator-app/01-Calculator.css">
+</head>
+<body id="body">
+
+    <header>
+        <h1 id="h1">Calculator app</h1>
+    </header>
+    <br><br><br>
+    <div class="input">
+        <input type="text" id="number1" placeholder="Enter a Number">
+        <input type="text" id="number2" placeholder="Enter a Number">
+    </div>
+    <div id="output-div">
+        <p id="output">Equal's To :</p>
+    </div>   
+    <div id="operations">
+        <button onclick="add()">+</button>
+        <button onclick="subtract()">-</button>
+        <button onclick="multiply()">x</button>
+        <button onclick="division()">/</button>
+        <button onclick="modulus()">%</button>
+        <button onclick="increment()">++</button>
+        <button onclick="decrement()">--</button>
+    </div>
+    <script src="/01-calculator-app/01-Calculator.js"></script>
+
+</body>
+</html>
