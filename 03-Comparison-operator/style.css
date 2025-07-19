@@ -1,0 +1,47 @@
+#header-1{
+    background: #dbded4;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    font-style:oblique;
+    font-size: xx-large;
+}
+#div-1{
+    padding-left: 40px;
+    padding-top: 40px;
+}
+#div-2{
+    padding-left: 40px;
+    padding-top: 10px;
+}
+#output{
+    padding: 30px;
+    background: #dbded4;
+}
+
+#button > button{
+    width: 52px;
+    height: 26px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    
+}
+#button > button:hover{
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: #dbded4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+}
+body{
+    width: 30rem;
+    height: 20rem;
+    margin: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: 2px solid black;
+}
