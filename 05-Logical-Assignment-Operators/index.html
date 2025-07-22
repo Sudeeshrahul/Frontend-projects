@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comparison-operators</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<!--  Build HTML logical operators app with 4 inputs value1(text), type1(select), value2(text),
+type2(select), and buttons for each of the operator(&&=, ||=, ??= - Nullish Coalescing Operator)
+On each operator button click convert value1 and value2 to respective types and execute the 
+clicked button operator and print results in html page.
+Write separate function for all the Logical Assignment operators
+Understanding all operators with all types of data is must to pass assessment -->
+<body>
+    
+        <h1 id="header-1">comparison operators</h1>
+    <div id="div-1">
+        <input id="oneIn" placeholder="data type">
+        <select name="select" id="select1">
+            <option >number</option>
+            <option >String</option>
+            <option >boolean</option>
+            <option >symbol</option>
+        </select>
+    </div>
+    <div id="div-2">
+        <input  id="twoIn" placeholder="data type">
+        <select id="select2">
+            <option >number</option>
+            <option >String</option>
+            <option >boolean</option>
+        </select>
+    </div>
+
+    <p id="output">Output :</p>
+
+    <div id="button">
+        <button onclick="andEqualTo()">&&=</button>
+        <button onclick="strictEqualTo()">||=</button>
+        <button onclick="notEqualTo()">??=</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
