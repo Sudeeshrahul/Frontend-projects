@@ -1,0 +1,31 @@
+body{
+    width: 30rem;
+    height: 20rem;
+    margin: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: 1px solid rgb(180, 176, 176);
+}
+.div > input{
+    padding: 8px;
+    margin: 5px;
+    background: #e4e4e4;
+    border: 1px solid rgb(130, 127, 127);
+}
+h1{
+    background: #d4cbcb;
+    font-style: italic;
+    text-align: center;
+}  
+button{
+     padding: 8px;
+    margin: 5px;
+    background: #e4e4e4;
+    border: 1px solid rgb(130, 127, 127);
+}    
+
+button:hover{
+    background: fixed rgb(39, 39, 36);
+    color: #fdfdfd;
+}
