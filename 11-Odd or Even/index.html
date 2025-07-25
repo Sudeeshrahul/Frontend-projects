@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>odd-or-even</title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 100px;
+            border: 1px solid rgb(220, 220, 186);
+        }
+        h1{
+            text-align: center;
+            background: #fdf3f3;
+        }
+        input{
+            padding: 10px;
+        }
+        button{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Odd || Even</h1>
+    <input type="text" id="in" placeholder="Enter a number">
+    <p id="out" style="padding: 5px; background: #fdf9f9;"></p>
+    <button onclick="oddEven()">Click Here !</button>
+    <script>
+        function oddEven(){
+            let val$ = parseFloat(document.getElementById('in').value);
+
+            if (val$ % 2 === 0){
+                document.getElementById('out').innerHTML = "Even Number";
+            }else{
+                document.getElementById('out').innerHTML = "odd Number";
+            }
+        }
+    </script>
+</body>
+</html>
