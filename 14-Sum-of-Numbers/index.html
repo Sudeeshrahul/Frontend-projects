@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Numbers</title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 200px;
+            border: 1px solid wheat;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sum of Numbers</h1>
+    <input type="text"  id="in$put">
+    <p id="output"></p>
+    <button onclick="generate()">Click Here !</button>
+    <script>
+        function generate(){
+            const input$ = parseFloat(document.getElementById('in$put').value);
+
+            if(isNaN(input$)){
+                document.getElementById('output').innerText = "Please enter a valid number";
+                return;
+            }
+
+            let sum = 0;
+            let i = 0;
+            while(i <= input$){
+                sum += i;
+                i++;
+            }
+            document.getElementById('output').innerHTML = `Sum of all previous numbers ${sum}`;
+        }
+    </script>
+</body>
+</html>
