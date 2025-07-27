@@ -13,5 +13,5 @@ function input(){
         sum += Number(i);
     }
     document.getElementById('out').innerHTML = `Sum of Numbers ${sum}`;
-    document.getElementById('out1').innerHTML = `Average of Numbwes ${sum / arr.length}`;
+    document.getElementById('out1').innerHTML = `Average of Numbers ${sum / arr.length}`;
 }
