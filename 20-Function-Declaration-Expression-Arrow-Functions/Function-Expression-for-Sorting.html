@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting</title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 100px;
+            border: 1px solid wheat;
+        }
+        div{
+            padding:20px;
+        }
+        input{
+            padding: 10px;
+        }
+        button{padding: 8px;}
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1> Function Expression for Sorting</h1>
+    <div>
+        <label for="">Array :</label>
+        <input type="text"  id="in" placeholder="Eg. 1,2,3">
+        <p id="out"></p>
+        <button onclick="sortArray()">Click here!</button>
+    </div>
+
+    <script>
+        document.getElementById('in').addEventListener("click",function(){
+            alert("Seperate the numbers with comma");
+        });
+
+        const sortArray = function(){
+            let input$ = document.getElementById('in').value;
+
+            if(!input$){
+                document.getElementById('out').innerHTML =  "plese enter a valid number";
+                return;
+            }
+
+            const arr = input$.split(",").map(num => parseFloat(num.trim()));
+
+            if(arr.some(isNaN)){
+                document.getElementById('out').innerHTML = "Seperate the numbers with comma";
+                return;
+            }
+
+            const sorted = mergSort(arr);
+            document.getElementById('out').innerHTML = `Sorted Array : ${sorted}`;
+
+        }
+
+        function mergSort(nums){
+            if(nums.length <= 1){
+                return nums;
+            }
+
+            let mid = Math.floor(nums.length / 2);
+            let left = mergSort(nums.slice(0,mid));
+            let right = mergSort(nums.slice(mid));
+
+            return merg(left,right);
+        }
+
+        function merg(left, right){
+            let res = [], i = 0, j = 0;
+
+            while(i < left.length && j < right.length){
+                if(left[i] < right[j]){
+                    res.push(left[i]);
+                    i++;
+                }else{
+                    res.push(right[j]);
+                    j++;
+                }
+            }
+            return res.concat(left.slice(i).concat(right.slice(j)));
+        }
+    </script>
+    
+
+
+</body>
+</html>

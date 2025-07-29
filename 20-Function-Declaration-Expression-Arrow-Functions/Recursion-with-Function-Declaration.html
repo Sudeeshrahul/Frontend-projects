@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion with Function Declaration</title>
+</head>
+<body>
+    <h1>Recursion with Function Declaration</h1>
+    <label for="">Fibonacci Serics :</label>
+    <input type="text" placeholder="Enter a number" id="in">
+    <p id="out"></p>
+    <button onclick="FibonacciSerice()">Click here !</button>
+    <script>
+        function fib(n){
+            if(n === 0) return 0;
+            if(n === 1) return 1;
+
+            let num = fib(n - 1) + fib(n - 2);
+            return num;
+        }
+
+        function FibonacciSerice(){
+        let val$ = parseInt(document.getElementById('in').value);
+
+        if(isNaN(val$) || val$ < 0){
+            document.getElementById('out').innerHTML = "Enter valid input";
+            return;
+        }
+
+        let res = fib(val$);
+
+        document.getElementById('out').innerText = `Fibonacci ${val$} = ${res}`;
+        }
+    </script>
+
+</body>
+</html>
