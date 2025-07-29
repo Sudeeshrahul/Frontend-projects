@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest-Parameters-for-Variable-Arguments</title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 100px;
+            border: 1px solid wheat;
+        }
+        input{
+            padding: 8px;
+        }
+        label{
+            padding: 10px;
+        }
+        button{
+            padding: 8px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rest Parameters for Variable Arguments</h1>
+    <input type="text" id="inp" placeholder="Eg, 1, 2, 3">
+    <p id="out">Sum of Dynamic Numbers : </p>
+    <button onclick="restPar()">Click for Sum</button>
+
+    <script>
+        function restPar(){
+            let va$ = document.getElementById('inp').value;
+            let res = va$.split(",").map(n => parseFloat(n.trim()));
+            let num = sum(...res);
+            document.getElementById('out').innerHTML = `Sum of Dynamic Numbers : ${num}`  ;
+        }
+        
+        function sum(...nums){
+            let sum = 0;
+            for(let i = 0; i < nums.length; i++)
+            {
+                sum += nums[i];
+            }
+            return sum;
+        }
+    </script>
+    
+</body>
+</html>
