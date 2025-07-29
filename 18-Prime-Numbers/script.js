@@ -1,11 +1,12 @@
     function isPrime(n){
         if(n < 2) return false;
-        for(let i = 2; i < Math.sqrt(n); i++)
+        for(let i = 2; i <= Math.sqrt(n); i++)
         {
-            if(n % 1 === 0) return false;
+            if(n % i === 0) return false;
         }
         return true;
     }
+    
 
 
 function primeNumber(){
@@ -13,12 +14,13 @@ function primeNumber(){
     const end$ = parseInt(document.getElementById('in1').value);
     let res = "Prime numbers:\n";
 
-    for(let nums = start$; nums < end$; nums++)
+    for(let nums = start$; nums <= end$; nums++)
     {
         if(isPrime(nums))
         {
             res += nums + " " ;
         }
     }
-    document.getElementById('out').innerHTML = res;
+    document.getElementById('out').innerText = res;
 }
+

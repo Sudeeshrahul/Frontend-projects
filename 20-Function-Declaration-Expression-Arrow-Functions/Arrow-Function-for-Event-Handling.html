@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Arrow Function</title>
+</head>
+<body>
+    <h1>Arrow Function for Event Handling</h1>
+    <br>
+    <div id="out"></div>
+    <br>
+    <button onclick="incerment()">Counter Increment</button>
+    <button onclick="decrement()">Counter decrement</button>
+    <button onclick="reset()">reset</button>
+    
+    <script>
+        let countr = 0;
+        const incerment = () => {
+            countr++;
+            document.getElementById('out').innerHTML = countr;
+        }
+
+        const decrement = () => {
+            countr--;
+            document.getElementById('out').innerHTML = countr;
+        }
+
+        const reset = () => {
+            countr = 0;
+            document.getElementById('out').innerHTML = countr;
+        }
+
+    </script>
+</body>
+</html>
