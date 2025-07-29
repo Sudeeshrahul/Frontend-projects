@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immediately Invoked Function Expression</title>
+</head>
+<body>
+    <h1>Immediately Invoked Function Expression</h1>
+    <label for="">Name :</label>
+    <input type="text" name="" id="inp">
+    <p id="out">Name  >> </p>
+    <button onclick="printName()">Print Name</button>
+    
+    <script>
+        (() => {
+            let defualt = "Eg : john";
+            document.getElementById('inp').value = defualt;
+        }) ();
+
+        function printName(){
+            let val = document.getElementById('inp').value;
+
+            if(!val){
+                (() => {
+            let defualt = "Eg : john";
+            document.getElementById('inp').value = defualt;
+            }) ();
+                return;
+            }
+
+            document.getElementById('out').innerHTML = `Name  >> ${val}`;
+        }
+    </script>
+</body>
+</html>

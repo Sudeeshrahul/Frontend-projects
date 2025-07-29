@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function with Default Parameters</title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 100px;
+            border: 1px solid wheat;
+        }
+        input{
+            padding: 8px;
+        }
+        label{
+            padding: 10px;
+        }
+        button{
+            padding: 8px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Function with Default Parameters</h1>
+    <h2>Area of Rectangle</h2>    
+    <label for="">Length :</label><br>
+    <input type="text" name="" id="length" placeholder="Eg: 5">
+    <br>
+    <br>
+    <label for="">Width :</label><br>
+    <input type="text" name="" id="width" placeholder="Eg: 5">
+    <p id="out"></p>
+    <button onclick="calculateArea()">Calculate Aera</button>
+    <script>
+        function calculateArea(length = 5,width = 5){
+            let len = document.getElementById('length').value;
+            let wid = document.getElementById('width').value;
+
+            length = len ? parseFloat(len): length;
+            width = wid ? parseFloat(width): width;
+
+            if(isNaN(length) || isNaN(width)){
+                document.getElementById('out').innerHTML = "Enter only valid input";
+                return;
+            }
+
+            let Area = length * width;
+            document.getElementById('out').innerHTML = `Area of rectangle = ${Area} Sq/m`;
+        }
+    </script>
+</body>
+</html>
