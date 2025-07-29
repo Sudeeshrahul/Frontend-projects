@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Functions with Default Values</title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 100px;
+            border: 1px solid wheat;
+        }
+        input{
+            padding: 8px;
+        }
+        label{
+            padding: 10px;
+        }
+        button{
+            padding: 8px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rest Parameters for Variable Arguments</h1>
+    <label for="">length</label>
+    <input type="text" id="length" placeholder="Eg, 5">
+    <label for="">Width</label>
+    <input type="text" id="width" placeholder="Eg, 5">
+    <p id="out">Perimeter of the rectangle : </p>
+    <p id="out1">Area of the rectangle : </p>
+    <button onclick="perimeterOfRectangle()">Click for Sum</button>
+
+    <script>
+        function perimeterOfRectangle(length = 5, width = 5){
+            let len  = document.getElementById('length').value;
+            let wid = document.getElementById('width').value;
+
+            length = len ? parseFloat(len) : length;
+            width = wid ? parseFloat(wid) : width;
+
+            if(isNaN(length) || isNaN(width)){
+                document.getElementById('out').innerHTML = "enter a correct number";
+                return;
+            }
+
+            let permeter = 2 * (length + width);
+            document.getElementById('out').innerHTML = `Perimeter of the rectangle : ${permeter}`;
+
+            // Nested function
+            (function(length = 5, width = 5)  {
+                let len  = document.getElementById('length').value;
+                let wid = document.getElementById('width').value;
+
+                length = len ? parseFloat(len) : length;
+                width = wid ? parseFloat(wid) : width;
+
+                if(isNaN(length) || isNaN(width)){
+                    document.getElementById('out1').innerHTML = "enter a correct number";
+                    return;
+                }
+
+                let area = length * width;
+                document.getElementById('out1').innerHTML = `Perimeter of the rectangle : ${area}`;
+            })();
+        }
+        
+    </script>
+    
+</body>
+</html>
