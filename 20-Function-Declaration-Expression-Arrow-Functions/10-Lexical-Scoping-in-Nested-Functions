@@ -1,0 +1,61 @@
+    <!-- Write a function that has three levels of nested functions. The innermost 
+     function should access variables defined in the outer functions and return a
+      concatenated string. Allow the user to set the variables in the HTML form and 
+      display the output -->
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+               body{
+            padding: 10px;
+            margin: 100px;
+            border: 1px solid wheat;
+        }
+        button{
+            padding: 8px;
+            margin: 3px;
+        }
+        input{
+            padding: 8px;
+            margin: 3px;
+        }
+ 
+        </style>
+    </head>
+    <body>
+         <h1>Lexical scope in nested function</h1>
+    <input type="text" name="" id="userInput1" placeholder="Eg, jhon">
+    <input type="text" name="" id="userInput2" placeholder="Eg, will">
+    <input type="text" name="" id="userInput3" placeholder="Eg, shon">
+    <p id="output"></p>
+    <button onclick="nestedLevels.levelOneFunction()">Deposit</button>
+    
+    <script>
+        function levelOneFunction(){
+            let nameOne = document.getElementById('userInput1');
+
+            function levelTwoFuncrion(){
+                let nameTwo = document.getElementById('userInput2');
+
+                function levelThreeFunction(){
+                    let nameThree = document.getElementById('userInput3');
+                }
+
+            }
+
+            return{
+                levelOneFunction : levelOneFunction,
+                levelTwoFuncrion : levelTwoFuncrion,
+                levelThreeFunction : levelThreeFunction
+            }
+        }
+
+        const nestedLevels = levelOneFunction();
+    </script>
+
+    </body>
+    </html>
