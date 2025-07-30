@@ -26,22 +26,23 @@
     <h1>Callback Functions with Default Parameters</h1>
     <input type="text" id="userInput" placeholder="Enter text">
     <button onclick="defaultFunction()">Process</button>
+    <button onclick="document.getElementById('output').innerHTML = Date()">Date</button>
     <p id="output"></p>
 
 
     <script>
-    function defaultFunction(Callback , Callback1 ){
+    function defaultFunction(Callback = nammme , Callback1 = revers){
         let name = document.getElementById('userInput').value;
         const res = Callback(name);
         const res1 = Callback1(name);
-        document.getElementById('output').innerHTML = `to uppercase ${res}  revers ${res1}`;
+        document.getElementById('output').innerHTML = "Text to uppercase letter: " + res + "<br>" + "Reversed: " + res1;
     }
 
     function nammme(val = "Name"){
         return val.toLocaleUpperCase();
     }
     function revers(val = "name"){
-        return val.split("").reverse().join("");
+        return val.toLocaleUpperCase().split("").reverse().join("");
     }
     </script>
     
