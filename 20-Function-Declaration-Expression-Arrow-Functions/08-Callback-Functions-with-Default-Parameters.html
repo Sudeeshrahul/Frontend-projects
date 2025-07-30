@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Functions with Default Parameters</title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 100px;
+            border: 1px solid wheat;
+        }
+        input{
+            padding: 8px;
+        }
+        label{
+            padding: 10px;
+        }
+        button{
+            padding: 8px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Callback Functions with Default Parameters</h1>
+    <input type="text" id="userInput" placeholder="Enter text">
+    <button onclick="defaultFunction()">Process</button>
+    <p id="output"></p>
+
+
+    <script>
+    function defaultFunction(Callback , Callback1 ){
+        let name = document.getElementById('userInput').value;
+        const res = Callback(name);
+        const res1 = Callback1(name);
+        document.getElementById('output').innerHTML = `to uppercase ${res}  revers ${res1}`;
+    }
+
+    function nammme(val = "Name"){
+        return val.toLocaleUpperCase();
+    }
+    function revers(val = "name"){
+        return val.split("").reverse().join("");
+    }
+    </script>
+    
+</body>
+</html>
