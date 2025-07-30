@@ -1,0 +1,88 @@
+<!-- Write a function that acts as a bank account. The function should have private
+  variables for balance and methods to deposit, withdraw, and check balance. Ensure 
+  balance manipulation is only possible through these methods. Add HTML inputs for user actions. -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+    <style>
+        body{
+            padding: 10px;
+            margin: 100px;
+            border: 1px solid wheat;
+        }
+        button{
+            padding: 8px;
+            margin: 3px;
+        }
+        input{
+            padding: 8px;
+            margin: 3px;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Bank account</h1>
+    <input type="text" name="" id="userInput" placeholder="Eg, 120.00">
+    <p id="output"></p>
+    <button onclick="account.deposit()">Deposit</button>
+    <button onclick="account.withdraw()">Withdraw</button>
+    <button onclick="account.balanceAmount()">Check balance</button>
+
+    <script>
+        function bankAccount(){
+            let balance = 100.00;
+
+            //function to deposit money
+            function deposit(){
+                let depositAmount = parseFloat(document.getElementById('userInput').value);
+                if(isNaN(depositAmount)){
+                    document.getElementById('output').innerHTML = "Enter Only Numbers";
+                    return;
+                }else{
+                    balance += depositAmount;
+                    document.getElementById('output').innerHTML = "Deposit Amount : "+depositAmount.toFixed(2)+" $"+"<br>"+balance;
+                    return;    
+                }
+
+            }
+
+            // function to withdraw money
+            function withdraw(){
+                let withdrawAmount = parseFloat(document.getElementById('userInput').value);
+                if(isNaN(withdrawAmount) || withdrawAmount < 0){
+                    document.getElementById('output').innerHTML = "Please enter correct amount";
+                    return;
+                }else if(withdrawAmount > balance){
+                    document.getElementById('output').innerHTML = "Insuficent Funds"+"<br>"+"Plese check your balance";
+                    return;
+                }else if(withdrawAmount <= balance){
+                    balance -= withdrawAmount;
+                    document.getElementById('output').innerHTML = "Withdrawl Amount : "+withdrawAmount.toFixed(2)+"<br>"+
+                                                                  "Balence Amount : "+balance.toFixed(2);
+                    return;
+                }
+            }
+
+            //function to check balence money
+            function balanceAmount(){
+                document.getElementById('output').innerHTML = "Account balance : "+balance.toFixed(2)+" $";
+            }
+
+            //returning object with 3 methods
+            return{
+                deposit : deposit,
+                withdraw : withdraw,
+                balanceAmount : balanceAmount
+            };
+        }
+
+        //calling the function
+        const account = bankAccount();
+
+    </script>
+    
+  </body>
+  </html>
