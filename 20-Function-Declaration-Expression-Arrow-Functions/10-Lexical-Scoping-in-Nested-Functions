@@ -32,29 +32,35 @@
     <input type="text" name="" id="userInput2" placeholder="Eg, will">
     <input type="text" name="" id="userInput3" placeholder="Eg, shon">
     <p id="output"></p>
-    <button onclick="nestedLevels.levelOneFunction()">Deposit</button>
+    <button onclick="runLevels()">Click Here</button>
     
     <script>
         function levelOneFunction(){
-            let nameOne = document.getElementById('userInput1');
-
+            let nameOne = document.getElementById('userInput1').value || "level-1";
+            
             function levelTwoFuncrion(){
-                let nameTwo = document.getElementById('userInput2');
+                let nameTwo = document.getElementById('userInput2').value || "level-2";
 
+                //this inner function can outer function varibles lexical 
                 function levelThreeFunction(){
-                    let nameThree = document.getElementById('userInput3');
+                    let nameThree = document.getElementById('userInput3').value || "level-3";
+                    let result = `${nameOne}  ${nameTwo}  ${nameThree}`;
+                    document.getElementById('output').innerHTML = result.toLocaleUpperCase();
                 }
+                return levelThreeFunction();
 
             }
 
-            return{
-                levelOneFunction : levelOneFunction,
-                levelTwoFuncrion : levelTwoFuncrion,
-                levelThreeFunction : levelThreeFunction
-            }
+            return levelTwoFuncrion();
         }
-
-        const nestedLevels = levelOneFunction();
+        
+        //this function is used for calling nested fi=unction
+        function runLevels(){
+            const lw = levelOneFunction();
+            const ll = lw();
+            ll();
+        }
+        
     </script>
 
     </body>
