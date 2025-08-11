@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mechanical Engineering Portfolio — Your Name</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa6b2; --accent:#38bdf8; --glass: rgba(255,255,255,0.04);
+      --max-w:1100px; --radius:14px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#081022 0%, #071126 100%);color:#e6eef6;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}
+    .wrap{width:100%;max-width:var(--max-w)}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-bottom:26px}
+    .card{background:linear-gradient(180deg,var(--card),rgba(10,16,26,0.55));padding:22px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(2,6,23,0.7)}
+    .intro h1{margin:0 0 8px;font-size:28px}
+    .intro p{margin:0;color:var(--muted);line-height:1.5}
+    .cta{margin-top:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#042032;text-decoration:none;font-weight:700}
+
+    .stats{display:flex;gap:12px;margin-top:14px}
+    .stat{background:var(--glass);padding:10px;border-radius:10px;text-align:center;min-width:80px}
+
+    .profile{display:flex;flex-direction:column;gap:12px}
+    .profile img{width:100%;height:240px;object-fit:cover;border-radius:10px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:rgba(255,255,255,0.03);padding:8px 10px;border-radius:999px;font-weight:600;color:var(--muted)}
+
+    .filters{display:flex;gap:8px;margin:18px 0 10px}
+    .chip{padding:8px 12px;background:rgba(255,255,255,0.02);border-radius:999px;cursor:pointer;font-weight:700;color:var(--muted)}
+    .chip.active{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021026}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+    .proj{overflow:hidden;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);cursor:pointer;display:flex;flex-direction:column}
+    .proj img{width:100%;height:170px;object-fit:cover}
+    .proj .body{padding:12px}
+    .proj h3{margin:0 0 6px;font-size:16px}
+    .proj p{margin:0;color:var(--muted);font-size:14px}
+    .tags{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted)}
+
+    footer{margin-top:26px;color:var(--muted);font-size:14px}
+
+    /* modal */
+    .modal-back{position:fixed;inset:0;background:rgba(2,6,23,0.7);display:none;align-items:center;justify-content:center;padding:22px}
+    .modal{background:#041026;padding:18px;border-radius:12px;max-width:900px;width:100%;box-shadow:0 12px 50px rgba(2,6,23,0.9)}
+    .modal .row{display:grid;grid-template-columns:1fr 360px;gap:16px}
+    .modal img{width:100%;border-radius:10px;height:100%;object-fit:cover}
+    .close{background:transparent;border:0;color:var(--muted);font-weight:800;cursor:pointer}
+
+    /* responsive */
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.modal .row{grid-template-columns:1fr}}
+    @media (max-width:520px){.profile img{height:160px}.proj img{height:140px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">ME</div>
+        <div>
+          <div style="font-weight:800">Your Name</div>
+          <div style="color:var(--muted);font-size:13px">Mechanical Engineer • Product Design • CAD</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card intro">
+        <h1>Hi — I'm <span style="color:var(--accent)">Your Name</span></h1>
+        <p>A mechanical engineer focused on practical product design, CAD modelling, prototyping and finite element analysis. I design components and systems for manufacturability and performance — below are selected projects showing concept, design files, and results.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">View projects</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><div style="font-size:18px;font-weight:800">12+</div><div style="font-size:12px;color:var(--muted)">Projects</div></div>
+          <div class="stat"><div style="font-size:18px;font-weight:800">3</div><div style="font-size:12px;color:var(--muted)">Internships</div></div>
+          <div class="stat"><div style="font-size:18px;font-weight:800">2022–2025</div><div style="font-size:12px;color:var(--muted)">Education</div></div>
+        </div>
+      </div>
+
+      <aside class="card profile">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Profile / project sample">
+        <div style="font-weight:800">Snapshot</div>
+        <div style="color:var(--muted);font-size:14px">Specialities: CAD (SolidWorks/Fusion/Inventor), FEA, Prototyping, GD&amp;T, Manufacturing drawings.</div>
+        <div class="skills" id="skills">
+          <div class="skill">CAD Modelling</div>
+          <div class="skill">FEA</div>
+          <div class="skill">Sheet Metal</div>
+          <div class="skill">GD&amp;T</div>
+          <div class="skill">CAM / CNC</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="card" style="margin-bottom:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <h2 style="margin:0">Selected Projects</h2>
+          <div style="color:var(--muted);margin-top:6px">Click any project to open details and download design files.</div>
+        </div>
+        <div class="filters" aria-hidden="false">
+          <div class="chip active" data-filter="all">All</div>
+          <div class="chip" data-filter="cad">CAD</div>
+          <div class="chip" data-filter="feA">FEA</div>
+          <div class="chip" data-filter="mechanism">Mechanism</div>
+        </div>
+      </div>
+
+      <div class="grid" id="grid">
+        <!-- Project card template: replace images, text, tags, and data-details with your content -->
+        <div class="proj" data-category="cad">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Solar concentrator sample">
+          <div class="body">
+            <h3>Solar Concentrator — Thermal Receiver</h3>
+            <p>Designed parabolic concentrator and receiver assembly, simulation for focal heat flux and prototype testing.</p>
+            <div class="tags"><span class="tag">CAD</span><span class="tag">Thermal</span></div>
+          </div>
+        </div>
+
+        <div class="proj" data-category="feA">
+          <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="FEA sample">
+          <div class="body">
+            <h3>Bracket FEA & Optimization</h3>
+            <p>Performed static stress analysis and topology-driven redesign to reduce weight by 28% while keeping safety factor &gt;2.0.</p>
+            <div class="tags"><span class="tag">FEA</span><span class="tag">Optimization</span></div>
+          </div>
+        </div>
+
+        <div class="proj" data-category="mechanism">
+          <img src="https://images.unsplash.com/photo-1591014498511-7a9b4a6c6d82?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Mechanism sample">
+          <div class="body">
+            <h3>Four-Bar Mechanism for Valve Actuation</h3>
+            <p>Modelled multi-link mechanism with motion study and manufacturing drawings for aluminium parts.</p>
+            <div class="tags"><span class="tag">Mechanism</span><span class="tag">Drawings</span></div>
+          </div>
+        </div>
+
+        <!-- Add more project cards as needed -->
+      </div>
+    </section>
+
+    <footer class="card" id="contact">
+      <h3 style="margin-top:0">Get in touch</h3>
+      <p style="color:var(--muted)">Interested in collaborating or want to see the full designs? Email me at <a href="mailto:youremail@example.com" style="color:var(--accent);text-decoration:none">youremail@example.com</a> or download my resume.</p>
+      <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+        <a class="btn" href="/files/Resume_YourName.pdf">Download Resume (replace link)</a>
+        <a class="btn" href="#projects">View Projects</a>
+      </div>
+    </footer>
+
+    <div style="text-align:center;color:var(--muted);margin-top:12px">Built with ❤️ using simple HTML, CSS & JavaScript — replace images and project details with your files.</div>
+  </div>
+
+  <!-- Modal markup -->
+  <div class="modal-back" id="modalBack">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div>
+          <div id="modalTitle" style="font-weight:800">Project Title</div>
+          <div style="color:var(--muted);font-size:13px" id="modalSubtitle">Short subtitle</div>
+        </div>
+        <div>
+          <button class="close" id="modalClose">✕</button>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <p id="modalDesc" style="color:var(--muted);line-height:1.5">Full description — what you did, tools used, key outcomes, lessons learned. Add links to Github, CAD step files, or downloadable ZIPs below.</p>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" id="modalFiles" href="#">Download files</a>
+            <a class="btn" id="modalReport" href="#">View report</a>
+          </div>
+        </div>
+        <div>
+          <img id="modalImg" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="project image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Filtering logic
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.proj');
+    chips.forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        chips.forEach(c=>c.classList.remove('active'));
+        chip.classList.add('active');
+        const f = chip.dataset.filter;
+        cards.forEach(card=>{
+          if(f==='all' || card.dataset.category.toLowerCase()===f.toLowerCase()) card.style.display='flex';
+          else card.style.display='none';
+        })
+      })
+    })
+
+    // Modal open/close & populate
+    const modalBack = document.getElementById('modalBack');
+    const modalClose = document.getElementById('modalClose');
+    const grid = document.getElementById('grid');
+    grid.addEventListener('click', e => {
+      const card = e.target.closest('.proj');
+      if(!card) return;
+      const title = card.querySelector('h3').innerText;
+      const desc = card.querySelector('p').innerText;
+      const img = card.querySelector('img').src;
+      const tags = Array.from(card.querySelectorAll('.tag')).map(t=>t.innerText).join(', ');
+
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalSubtitle').innerText = tags;
+      document.getElementById('modalDesc').innerText = desc + '\n\nTools & files: replace this with links to STEP/IGES, STL, FEA reports, and GitHub.';
+      document.getElementById('modalImg').src = img;
+      document.getElementById('modalFiles').href = '#';
+      document.getElementById('modalReport').href = '#';
+
+      modalBack.style.display = 'flex';
+    });
+
+    modalClose.addEventListener('click', ()=> modalBack.style.display='none');
+    modalBack.addEventListener('click', (ev)=>{ if(ev.target===modalBack) modalBack.style.display='none'});
+
+    // Accessibility: ESC to close modal
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') modalBack.style.display='none' })
+
+    // Tip: replace card markup with server-side or JSON data for many projects
+  </script>
+</body>
+</html>
